@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    background-color: ghostwhite;
+
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+header {
+    background-color: #e1e0e0;
+}
+
+.button {
+
+}
+
+.new-task {
+
+}
+
+.delete-task {
+
+}
+
+.task {
+    display: flex;
+}
