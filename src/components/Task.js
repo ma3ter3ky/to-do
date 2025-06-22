@@ -1,32 +1,19 @@
 import React from 'react';
 
-class DeleteButton extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.onClick = this.onClick.bind(this);
-    }
-    render() {
-        return (
-            <button onClick={this.onClick} className="delete-task button">Delete</button>
-        );
-    }
-
-    onClick() {
-        console.log('deleted!');
-    }
-}
-
 class Task extends React.Component {
     render() {
         return (
             <div className="task">
-                <h2>{this.props.task.title}</h2>
-                <DeleteButton />
+                <p>{this.props.name}</p>
+                <p>{this.props.completed}</p>
+                <button className="delete-task button"
+                        onClick={() => this.props.deleteTask(this.props.id)}>Delete</button>
+
+                <button className="complete-task button"
+                        onClick={() => this.props.completeTask(this.props.id)}>Complete</button>
             </div>
         );
     }
-
 }
 
 export default Task;

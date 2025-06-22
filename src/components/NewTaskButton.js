@@ -3,19 +3,27 @@ import React from 'react';
 class NewTaskButton extends React.Component {
     constructor(props) {
         super(props);
-
-        this.onClick = this.onClick.bind(this);
+        this.state = {
+            taskName: "",
+        };
     }
-
     render() {
         return (
-            <button onClick={this.onClick} className="new-task button">
-                New Task</button>
+            <div className="newTask">
+                <input className="newTaskName" type="text" placeholder="Type a new task"
+                value={this.state.taskName}
+                onChange={(event) => this.setState({taskName: event.target.value})}
+                onKeyPress={(event) => event.key === 'Enter' ? this.validateTask() : null}/>
+                <button className="newTaskButton button" onClick={() => this.validateTask()}> Add Task </button>
+            </div>
         );
     }
 
-    onClick() {
-        console.log('clicked');
+    validateTask() {
+        if (this.state.taskName !== "") {
+            this.props.addNewTask(this.state.taskName);
+            this.setState({taskName: ""});
+        }
     }
 }
 
