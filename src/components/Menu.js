@@ -16,13 +16,13 @@ class Menu extends React.Component {
         }
         this.addNewTask = this.addNewTask.bind(this);
         this.deleteTask = this.deleteTask.bind(this);
-        this.completeTask = this.completeTask.bind(this);
+        this.toggleCompleteTask = this.toggleCompleteTask.bind(this);
     }
     render() {
         return (
             <div className="menu">
                 <NewTaskButton addNewTask={this.addNewTask}/>
-                <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask} completeTask={this.completeTask}/>
+                <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask} completeTask={this.toggleCompleteTask}/>
             </div>
         );
     }
@@ -35,11 +35,11 @@ class Menu extends React.Component {
         });
     }
 
-    completeTask(id){
+    toggleCompleteTask(id){
         this.setState(prevState => {
             const updatedTasks = new Map(prevState.tasks);
             const task = updatedTasks.get(id);
-            updatedTasks.set(id, {...task, completed: true});
+            updatedTasks.set(id, {...task, completed: !task.completed});
             return {tasks: updatedTasks};
         });
     }
