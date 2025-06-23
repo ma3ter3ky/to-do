@@ -1,20 +1,63 @@
+:root {
+    --bg-dark: hsl(0, 0%, 2%);
+    --bg-normal: hsl(0, 0%, 5%);
+    --bg-light: hsl(0, 0%, 10%);
+    --text-light: hsl(0, 0%, 95%);
+    --text-normal: hsl(0, 0%, 80%);
+
+    --distance-xs: 4px;
+    --distance-s: 8px;
+    --distance-m: 12px;
+    --distance-l: 20px;
+    --distance-xl: 32px;
+    --distance-xxl: 64px;
+}
 * {
     margin: 0;
     padding: 0;
 }
 
 .app {
-    background-color: ghostwhite;
-
-    padding: 12px;
-
     display: flex;
     flex-direction: column;
-    row-gap: 12px;
+    align-items: center;
+
+    height: 100vh;
+
+    background-color: var(--bg-dark);
 }
 
 header {
-    background-color: #e1e0e0;
+    background-color: var(--bg-dark);
+    text-align: center;
+    color: var(--text-light);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 60%;
+
+    background-color: var(--bg-normal);
+    color: var(--text-light);
+    overflow-y: scroll;
+}
+.newTask {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: var(--distance-m) var(--distance-s);
+}
+.taskList {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: scroll;
+
+    background-color: var(--bg-normal);
 }
 
 .button {
