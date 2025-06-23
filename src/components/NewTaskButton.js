@@ -10,7 +10,7 @@ class NewTaskButton extends React.Component {
     render() {
         return (
             <div className="newTask">
-                <input className="newTaskName" type="text" placeholder="Type a new task"
+                <input className="newTaskInput" type="text" placeholder="Type a new task"
                 value={this.state.taskName}
                 onChange={(event) => this.setState({taskName: event.target.value})}
                 onKeyPress={(event) => event.key === 'Enter' ? this.validateTask() : null}/>

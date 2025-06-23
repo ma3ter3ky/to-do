@@ -1,9 +1,24 @@
 :root {
-    --bg-dark: hsl(0, 0%, 2%);
-    --bg-normal: hsl(0, 0%, 5%);
-    --bg-light: hsl(0, 0%, 10%);
-    --text-light: hsl(0, 0%, 95%);
-    --text-normal: hsl(0, 0%, 80%);
+    --bg-dark: hsl(0 0% 3%);
+    --bg: hsl(0 0% 5%);
+    --bg-light: hsl(0 0% 10%);
+
+    --text: hsl(2 42% 96%);
+    --text-muted: hsl(2 6% 70%);
+
+    --highlight: hsl(2 4% 40%);
+    --border: hsl(2 5% 29%);
+    --border-muted: hsl(2 7% 19%);
+
+    --primary: hsl(25 66% 67%);
+    --primary-on-hover: hsl(25 66% 57%);
+    --secondary: hsl(202 73% 67%);
+    --secondary-on-hover: hsl(202 73% 57%);
+
+    --danger: hsl(9 26% 64%);
+    --warning: hsl(52 19% 57%);
+    --success: hsl(146 17% 59%);
+    --info: hsl(217 28% 65%);
 
     --distance-xs: 4px;
     --distance-s: 8px;
@@ -30,7 +45,20 @@
 header {
     background-color: var(--bg-dark);
     text-align: center;
-    color: var(--text-light);
+    color: var(--text);
+}
+
+.footer {
+    margin-top: var(--distance-m);
+    height: 8%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    background-color: var(--bg-dark);
+    color: var(--text-muted);
 }
 
 .menu {
@@ -39,11 +67,17 @@ header {
     align-items: center;
 
     width: 60%;
+    height: 100%;
 
-    background-color: var(--bg-normal);
-    color: var(--text-light);
+    color: var(--text);
+    background-color: var(--bg);
+    border-radius: var(--distance-m);
+    border: 1px solid var(--border-muted);
+
     overflow-y: scroll;
+
 }
+
 .newTask {
     display: flex;
     flex-direction: row;
@@ -51,21 +85,45 @@ header {
 
     padding: var(--distance-m) var(--distance-s);
 }
+
+.newTaskInput {
+
+}
+
 .taskList {
     display: flex;
     flex-direction: column;
     flex: 1;
     overflow-y: scroll;
 
-    background-color: var(--bg-normal);
+    background-color: var(--bg);
 }
 
 .button {
+    background-color: var(--primary);
 
+    color: var(--text);
+    padding: var(--distance-xs) var(--distance-s);
+
+    border: none;
+    border-radius: var(--distance-m);
 }
 
-.new-task {
+.button:hover {
+    transition: all 0.2s ease;
+    background-color: var(--primary-on-hover);
+}
 
+.newTaskInput {
+    height: 100%;
+    padding: 0 var(--distance-s);
+    border: none;
+    border-radius: var(--distance-m) 0 0 var(--distance-m);
+}
+
+.newTaskButton {
+    height: 100%;
+    border-radius: 0 var(--distance-m) var(--distance-m) 0;
 }
 
 .delete-task {
